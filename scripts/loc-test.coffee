@@ -17,10 +17,11 @@ module.exports = (robot) ->
     caseNumber = res.match[1]
     text = "FogBugz - Case " + caseNumber
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
-    previousMessage = res.message.username
+    previousMessage = res.message.user
     msgData = {
       channel: res.message.room,
       unfurl_links: true,
+      text: "<"+link+"|"+text+">",
       attachments: [
         {
             "fallback": text + ":" + link,
