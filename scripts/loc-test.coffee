@@ -28,9 +28,11 @@ module.exports = (robot) ->
       attachments: [
         {
             "fallback": text + ":" + link,
+            "pretext": "",
             "title": text,
             "title_link": link,
-            "color": "#7CD197"
+            "color": "#7CD197",
+            "thumb_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
     }
