@@ -25,8 +25,7 @@ module.exports = (robot) ->
             "title": text,
             "title_link": link,
             "color": "#7CD197",
-            "text": "Dette er case nevnt i forrige melding"
-            "thumb_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
+            "image_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
     }
