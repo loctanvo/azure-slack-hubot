@@ -7,5 +7,6 @@
   "hubot-maps",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-azure-scripts/brain/storage-blob-brain"
+  "hubot-azure-scripts/brain/storage-blob-brain",
+  "loc-test"
 ]
