@@ -20,6 +20,7 @@ module.exports = (robot) ->
     res.send link
   
   robot.hear /test attachment/i, (res) ->
+    res.send "jah jah"
     msgData = {
       channel: res.message.room
       text: "Latest changes"
@@ -32,8 +33,9 @@ module.exports = (robot) ->
             "text": "Help! I tried to reset my password but nothing happened!",
             "color": "#7CD197"
         }
-    ]
+      ]
     }
+    
     res.customMessage msgData
   #
   # robot.respond /open the (.*) doors/i, (res) ->
