@@ -17,6 +17,7 @@ module.exports = (robot) ->
     caseNumber = res.match[1]
     text = "FogBugz - Case " + caseNumber
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
+    previousMessage = res.message
     msgData = {
       channel: res.message.room
       attachments: [
@@ -24,8 +25,8 @@ module.exports = (robot) ->
             "fallback": text + ":" + link,
             "title": text,
             "title_link": link,
+            "text": previousMessage,
             "color": "#7CD197",
-            "image_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
     }
