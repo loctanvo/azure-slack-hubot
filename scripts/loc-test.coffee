@@ -19,18 +19,17 @@ module.exports = (robot) ->
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     res.send link
   
-  robot.hear /test attachment/i, (res) ->
-    res.send "jah jah"
+  robot.hear /case (\d+)/i, (res) ->
+    caseNumber = res.match[1]
+    link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
+    text = "FogBugz - Case " + caseNumber
     msgData = {
       channel: res.message.room
-      text: "Latest changes"
       attachments: [
         {
-            "fallback": "New ticket from Andrea Lee - Ticket #1943: Can't rest my password - https://groove.hq/path/to/ticket/1943",
-            "pretext": "New ticket from Andrea Lee",
-            "title": "Ticket #1943: Can't reset my password",
-            "title_link": "https://groove.hq/path/to/ticket/1943",
-            "text": "Help! I tried to reset my password but nothing happened!",
+            "fallback": text + ":" + link,
+            "title": text,
+            "title_link": link,
             "color": "#7CD197"
         }
       ]
