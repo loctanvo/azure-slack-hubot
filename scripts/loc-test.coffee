@@ -18,7 +18,7 @@ module.exports = (robot) ->
     res.send "Yes, your case number is: " + caseNumber
     linkText = "Case " + caseNumber
     res.send "Your link text is:" + linkText
-    link = "&lt;https://4subsea.fogbugz.com/default.asp?" + caseNumber + "|" + linkText + "&gt;"
+    link = "<https://4subsea.fogbugz.com/default.asp?" + caseNumber + "|" + linkText + ">"
     res.send link
     
   #
