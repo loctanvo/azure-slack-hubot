@@ -19,6 +19,8 @@ module.exports = (robot) ->
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     msgData = {
       channel: res.message.room,
+      icon_url: "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png",
+      username: res.message.user.name,
       #text: "<"+link+"|"+text+">",
       attachments: [
         {
