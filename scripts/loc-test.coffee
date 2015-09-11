@@ -36,7 +36,7 @@ module.exports = (robot) ->
       ]
     }
     
-    res.customMessage msgData
+    robot.adapter.customMessage msgData
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
