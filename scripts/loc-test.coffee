@@ -19,7 +19,7 @@ module.exports = (robot) ->
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     msgData = {
       channel: res.message.room,
-      #text: "<"+link+"|"+text+">",
+      #text: "<"+link+"|"+text+">", 
       attachments: [
         {
             "fallback": text + ":" + link,
@@ -27,7 +27,7 @@ module.exports = (robot) ->
             "title_link": link,
             "color": "#7CD197",
             #"text": "Loc debugger noe: " + JSON.stringify(res.message),
-            "author_name" : FogBugz,
+            "author_name" : "FogBugz",
             "author_icon": "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
