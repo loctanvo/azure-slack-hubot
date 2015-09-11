@@ -12,6 +12,11 @@ module.exports = (robot) ->
 
   robot.hear /location/i, (res) ->
      res.send "Did you mean lapation?"
+     
+  robot.hear /case (\d.+)/i, (res) ->
+    caseNumber = res.match[1]
+    res.send "Fogbugz-link: https://4subsea.fogbugz.com/default.asp?" + caseNumber
+    
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
