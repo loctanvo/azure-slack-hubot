@@ -21,18 +21,17 @@ module.exports = (robot) ->
   
   robot.hear /case (\d+)/i, (res) ->
     caseNumber = res.match[1]
-    link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     text = "FogBugz - Case " + caseNumber
+    link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     msgData = {
-      channel: res.message.room
       attachments: [
         {
             "fallback": text + ":" + link,
-            "pretext": "",
+            "pretext": "Dette er link til case nevnt i forrige melding",
             "title": text,
             "title_link": link,
             "color": "#7CD197",
-            "thumb_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
+            "image_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
     }
