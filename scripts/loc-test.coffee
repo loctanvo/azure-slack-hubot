@@ -12,26 +12,21 @@ module.exports = (robot) ->
 
   robot.hear /location/i, (res) ->
      res.send "Did you mean lapation?"
-     
-  robot.hear /case (\d+)/i, (res) ->
-    caseNumber = res.match[1]
-    linkText = "Case " + caseNumber
-    link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
-    res.send link
-  
+
   robot.hear /case (\d+)/i, (res) ->
     caseNumber = res.match[1]
     text = "FogBugz - Case " + caseNumber
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
     msgData = {
+      channel: res.message.room
       attachments: [
         {
             "fallback": text + ":" + link,
-            "pretext": "Dette er link til case nevnt i forrige melding",
             "title": text,
             "title_link": link,
             "color": "#7CD197",
-            "image_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
+            "text": "Dette er case nevnt i forrige melding"
+            "thumb_url" : "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
     }
