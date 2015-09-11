@@ -15,19 +15,16 @@ module.exports = (robot) ->
 
   robot.hear /case (\d+)/i, (res) ->
     caseNumber = res.match[1]
-    text = "FogBugz - Case " + caseNumber
+    text = "Go to case " + caseNumber
     link = "https://4subsea.fogbugz.com/default.asp?" + caseNumber
-    previousMessage = res.message.user
     msgData = {
       channel: res.message.room,
-      unfurl_links: true,
-      text: "<"+link+"|"+text+">",
+      #text: "<"+link+"|"+text+">",
       attachments: [
         {
             "fallback": text + ":" + link,
             "title": text,
             "title_link": link,
-            "text": previousMessage,
             "color": "#7CD197",
         }
       ]
