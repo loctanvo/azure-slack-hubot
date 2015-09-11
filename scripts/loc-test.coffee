@@ -26,7 +26,8 @@ module.exports = (robot) ->
             "title": text,
             "title_link": link,
             "color": "#7CD197",
-            "text": "Loc debugger noe: " + JSON.stringify(res.message)
+            "text": "Loc debugger noe: " + JSON.stringify(res.message),
+            "author_name" : res.message.user.name,
             "author_icon": "https://zapier.cachefly.net/storage/services/40d0063ae7f49894265c97b4d043e1bc.128x128.png"
         }
       ]
