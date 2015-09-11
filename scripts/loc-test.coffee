@@ -15,7 +15,8 @@ module.exports = (robot) ->
      
   robot.hear /case (\d+)/i, (res) ->
     caseNumber = res.match[1]
-    res.send "Fogbugz-link: https://4subsea.fogbugz.com/default.asp?" + caseNumber
+    linkText = "Case " + caseNumber
+    res.send "<https://4subsea.fogbugz.com/default.asp?" + caseNumber + "|" + linkText +">"
     
   #
   # robot.respond /open the (.*) doors/i, (res) ->
