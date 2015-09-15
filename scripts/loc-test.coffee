@@ -36,7 +36,7 @@ module.exports = (robot) ->
     robot.adapter.customMessage msgData
   
   robot.respond /braindump/i, (res) ->
-    res.reply "My brain is: " + JSON.stringify(robot.brain)
+    res.reply "You really want me to dump my brain?"
   
   
   # robot.respond /open the (.*) doors/i, (res) ->
