@@ -34,7 +34,11 @@ module.exports = (robot) ->
     }
     
     robot.adapter.customMessage msgData
-  #
+  
+  robot.respond /braindump/i, (res) ->
+    res.reply "My brain is: " + JSON.stringify(robot.brain)
+  
+  
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
