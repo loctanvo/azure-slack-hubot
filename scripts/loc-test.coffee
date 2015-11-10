@@ -10,8 +10,8 @@
 
 module.exports = (robot) ->
 
-  robot.hear /location/i, (res) ->
-     res.send "Did you mean lapation?"
+  #robot.hear /location/i, (res) ->
+  #   res.send "Did you mean lapation?"
 
   robot.hear /case\s*(\d+)/i, (res) ->
     caseNumber = res.match[1]
